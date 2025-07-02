@@ -6,9 +6,9 @@
 <body>
     <h1>Alunos</h1>
     <ul>
-        <?php foreach ($alunos as $aluno): ?>
+        <?php foreach ($alunos as $aluno) { ?>
             <li><?php echo $aluno['nome'] . ' - ' . $aluno['idade'] . ' anos'; ?></li>
-        <?php endforeach; ?>
+        <?php } ?>
     </ul>
 </body>
 </html>

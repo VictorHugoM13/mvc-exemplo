@@ -1,10 +1,19 @@
 <?php
 class Aluno {
+    public function __construct(){
+        if (!isset($_SESSION['alunos'])) {
+            $_SESSION['alunos'] = [];
+        }
+    }
+
     public function listarTodos() {
-        return [
-            ['nome' => 'João', 'idade' => 17],
-            ['nome' => 'Maria', 'idade' => 16],
-            ['nome' => 'Carlos', 'idade' => 18]
+        return $_SESSION['alunos'];
+    }
+
+    public function adicionar($nome, $idade) {
+        $_SESSION['alunos'][] = [
+            'nome'=>$nome,
+            'idade'=>(int)$idade
         ];
     }
 }
